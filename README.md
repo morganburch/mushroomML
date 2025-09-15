@@ -8,6 +8,21 @@ I used the Mushroom Dataset from Kaggle, which contains **23 features** describi
 
 ---
 
+### Data Preprocessing & Analysis
+
+Before training models, I conducted extensive data preprocessing and analysis to ensure accurate and reliable predictions:
+
+- **Categorical Feature Encoding:** All 23 features were categorical. Each feature was encoded using label encoding to convert categories into numerical values suitable for modeling.  
+- **Train/Test Split:** The dataset of 8,124 mushrooms was split into training (80%) and test (20%) sets to evaluate model generalization.  
+- **Feature Standardization:** Features were standardized using `StandardScaler` to ensure that all input variables contributed equally to model training.  
+- **Cross-Validation:** Performed 5-fold cross-validation to evaluate model stability and obtain average performance metrics, including accuracy and confusion matrices.  
+- **Hyperparameter Tuning:** Implemented a custom grid search for Logistic Regression, testing combinations of `C` and regularization (`l1` or `l2`) to identify the best-performing model.  
+- **Performance Analysis:** After cross-validation, the best model was retrained on the full training set and evaluated on the test set. Confusion matrices were analyzed to understand misclassification patterns, particularly for poisonous mushrooms.  
+
+> *Note: Accuracy and confusion matrix results may vary slightly due to random train/test splits and cross-validation shuffling.*
+
+---
+
 ## Model
 
 I applied **Logistic Regression** to the dataset using the default hyperparameters from Scikit-learn. The initial model achieved an accuracy score of **95.2%**.
@@ -132,5 +147,6 @@ I evaluated two **Dummy Classifiers** (Stratified and Most Frequent) to compare 
 Both **Logistic Regression** and **KNN** outperformed the dummy classifiers. While KNN achieved slightly higher accuracy (**96.9%**), Logistic Regression provided more **balanced classification**. Specifically, KNN **misclassified 100 poisonous mushrooms as edible**, whereas Logistic Regression only misclassified **32 poisonous mushrooms as edible**.
 
 For real-world applications, **Logistic Regression** may be preferable since **fewer poisonous mushrooms are incorrectly classified as edible**, making it a **safer** choice despite KNN’s slightly higher accuracy.
+
 
 
