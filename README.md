@@ -1,4 +1,4 @@
-# 🍄 Mushroom Classification
+# Mushroom Classification
 ## Overview
 This project analyzes the Mushroom Classification Dataset from Kaggle to determine whether a mushroom is edible or poisonous based on various features. I implemented Logistic Regression and K-Nearest Neighbors (KNN) and compared their performance against baseline dummy classifiers.
 
@@ -12,9 +12,6 @@ I used the Mushroom Dataset from Kaggle, which contains **23 features** describi
 
 I applied **Logistic Regression** to the dataset using the default hyperparameters from Scikit-learn. The initial model achieved an accuracy score of **95.2%**.
 
-### Accuracy
-
-**0.952**
 
 ### Confusion Matrix
 
@@ -135,4 +132,5 @@ I evaluated two **Dummy Classifiers** (Stratified and Most Frequent) to compare 
 Both **Logistic Regression** and **KNN** outperformed the dummy classifiers. While KNN achieved slightly higher accuracy (**96.9%**), Logistic Regression provided more **balanced classification**. Specifically, KNN **misclassified 100 poisonous mushrooms as edible**, whereas Logistic Regression only misclassified **32 poisonous mushrooms as edible**.
 
 For real-world applications, **Logistic Regression** may be preferable since **fewer poisonous mushrooms are incorrectly classified as edible**, making it a **safer** choice despite KNN’s slightly higher accuracy.
+
 
